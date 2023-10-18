@@ -7,18 +7,20 @@ h1{
     color:rgb(62, 116, 114);
     font-family: verdana;
     }
-.maindiv {
+.simple_interest {
     background-color: white;
     color: black ;
     padding: 20px;
+    margin:1cm;
     border-radius: 25px;
     text-align: center;
 }
 
-.second_div{
+.unit_conversion{
     background-color: white;
     color: black ;
     padding: 20px;
+    margin:1cm;
     border-radius: 25px;
     text-align: center;
 
