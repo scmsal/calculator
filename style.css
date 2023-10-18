@@ -7,6 +7,11 @@ h1{
     color:rgb(62, 116, 114);
     font-family: verdana;
     }
+.all_divs{
+        display: flex;
+        flex-direction: row;
+        flex-flow: wrap;
+      }
 .maindiv {
     background-color: white;
     color: black ;
