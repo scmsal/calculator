@@ -27,8 +27,8 @@ h1{
 /* Navigation Bar Container*/
 
 .topdiv {
-    float: center;
-    
+    align-items: center;
+    padding-right: 1cm;
   }
   
 /* Navigation Bar Buttons */
