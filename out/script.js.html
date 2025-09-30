@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: script.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: script.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Computes investment or loan details based on user input from the DOM.
+ *
+ * Retrieves values for principal, rate, and years from the HTML elements with ids 'principal', 'rate', and 'years'
+ *
+ * @function compute
+ * @returns {void} This function does not return a value directly; it updates the DOM directly.
+ */
+
+function compute() {
+  var principal = document.getElementById("principal").value;
+  var rate = document.getElementById("rate").value;
+  var years = document.getElementById("years").value;
+  var interest = (principal * years * rate) / 100;
+  var year = new Date().getFullYear() + parseInt(years);
+  var amount = parseInt(principal) + parseFloat(interest);
+  var result = document.getElementById("result");
+
+  if (principal &lt;= 0) {
+    alert("Enter a positive number.");
+    document.getElementById("principal").focus();
+  } else {
+    result.innerHTML =
+      "If you deposit $" +
+      "&lt;mark>" +
+      principal +
+      "&lt;/mark>" +
+      ",&lt;br> at an interest rate of " +
+      "&lt;mark>" +
+      rate +
+      "%" +
+      "&lt;/mark>" +
+      "&lt;br> You will receive an amount of $" +
+      "&lt;mark>" +
+      amount +
+      "&lt;/mark>" +
+      ",&lt;br> in the year " +
+      "&lt;mark>" +
+      year +
+      "&lt;/mark>" +
+      "&lt;br>";
+  }
+}
+
+/**
+ * Updates the displayed interest rate value when the input changes.
+ *
+ * Reads the current value from the input element with ID `rate`
+ * and updates the text content of the element with ID `rate_val`
+ * to reflect the selected rate.
+ *
+ * Intended to be used as an `onchange` handler for the rate input.
+ *
+ * @function updateRate
+ * @returns {void} Does not return a value; updates the DOM directly.
+ *
+ * @example
+ * // HTML:
+ * // &lt;input id="rate" type="range" value="5" onchange="updateRate()" />
+ * // &lt;span id="rate_val">&lt;/span>
+ *
+ * // JS:
+ * updateRate(); // sets the span text to "5"
+ */
+
+function updateRate() {
+  var rateval = document.getElementById("rate").value;
+  document.getElementById("rate_val").innerText = rateval;
+}
+
+/**
+ * Converts a temperature from Celsius to Fahrenheit and updates the DOM.
+ *
+ * Reads the numeric value from the input element with ID `Celsius`,
+ * converts it to Fahrenheit using the formula:
+ *
+ *   Fahrenheit = (Celsius × 9 / 5) + 32
+ *
+ * and sets the result in the input element with ID `Fahrenheit`.
+ *
+ * @function temperature
+ * @returns {void} Does not return a value; updates the DOM directly.
+ *
+ * @example
+ * // HTML:
+ * // &lt;input id="Celsius" value="0" />
+ * // &lt;input id="Fahrenheit" />
+ *
+ * // JS:
+ * temperature(); // sets the "Fahrenheit" input value to "32"
+ */
+
+function temperature() {
+  //To convert Celsius to Farenheit
+  //(CEL * 9/5) + 32
+  var c = document.getElementById("Celsius").value;
+  var f = (c * 9) / 5 + 32;
+  document.getElementById("Fahrenheit").value = f;
+}
+
+/**
+ * Converts kilograms to pounds based on user input and updates the DOM
+ *  Reads the numeric value from the input element with ID `kg`,
+ * converts it to pounds using the formula `lbs = kg * 2.2`,
+ * and sets the result in the input element with ID `lbs`
+ * @function weight
+ * @returns {void} This function does not return a value directly; it updates the DOM directly.
+ * @example
+ * // HTML:
+ * // &lt;input id="kg" value="10" />
+ * // &lt;input id="lbs" />
+ *
+ * // JS:
+ * weight(); // sets the "lbs" input value to "22"
+ */
+function weight() {
+  var kg = document.getElementById("kg").value;
+  var lbs = kg * 2.2;
+  document.getElementById("lbs").value = lbs;
+}
+
+/**
+ * Converts a distance in kilometers to miles and updates the DOM.
+ *
+ * Reads the numeric value from the input element with ID `km`,
+ * converts it to miles using the formula:
+ *
+ *   Distance (miles) = Distance (km) * 0.62137
+ *
+ * and sets the result in the input element with ID `miles`.
+ *
+ * @function distance
+ * @returns {void} Does not return a value; updates the DOM directly.
+ *
+ * @example
+ * // HTML:
+ * // &lt;input id="km" value="5" />
+ * // &lt;input id="miles" />
+ *
+ * // JS:
+ * distance(); // sets the "miles" input value to "3.10685"
+ */
+
+function distance() {
+  //To convert Kilometers to Miles
+  //Distance(Miles) = Distance(Kms) * 0.62137
+
+  var km = document.getElementById("km").value;
+  var m = km * 0.62137;
+  document.getElementById("miles").value = m;
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#compute">compute</a></li><li><a href="global.html#distance">distance</a></li><li><a href="global.html#temperature">temperature</a></li><li><a href="global.html#updateRate">updateRate</a></li><li><a href="global.html#weight">weight</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Tue Sep 30 2025 12:09:42 GMT-0400 (Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

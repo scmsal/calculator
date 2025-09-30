@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "jsdoc": "^4.0.4"
+  },
+  "scripts": {
+  "docs": "jsdoc ./ -r -d docs"
+}
+
+
+}
+
